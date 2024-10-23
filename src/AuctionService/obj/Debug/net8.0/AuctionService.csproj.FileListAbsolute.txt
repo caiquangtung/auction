@@ -100,3 +100,10 @@
 /Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/obj/Debug/net8.0/AuctionS.72D7E915.Up2Date
 /Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/obj/Debug/net8.0/AuctionService.sourcelink.json
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/MassTransit.dll
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/MassTransit.Abstractions.dll
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/MassTransit.RabbitMqTransport.dll
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/RabbitMQ.Client.dll
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/Contracts.dll
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/Contracts.pdb
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/MassTransit.EntityFrameworkCoreIntegration.dll

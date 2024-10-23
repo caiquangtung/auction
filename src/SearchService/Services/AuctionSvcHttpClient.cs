@@ -6,7 +6,6 @@ namespace SearchService.Services;
 
 public class AuctionSvcHttpClient
 {
-    private readonly HttpClient _client;
     private readonly HttpClient _httpClient;
     private readonly IConfiguration _config;
 
