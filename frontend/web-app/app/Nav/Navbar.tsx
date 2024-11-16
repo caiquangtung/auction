@@ -1,14 +1,17 @@
-"use client";
 import React from "react";
-import { FaCar } from "react-icons/fa";
 import Search from "./Search";
 import Logo from "./Logo";
-export default function NavBar() {
+import LoginButton from "./LoginButton";
+import UserActions from "./UserActions";
+import { getCurrentUser } from "../actions/authActions";
+
+export default async function NavBar() {
+  const user = await getCurrentUser();
   return (
     <header className="flex justify-between items-center p-5 bg-white text-gray-800 shadow-md sticky top-0 z-50">
-        <Logo />
+      <Logo />
       <Search />
-      <div>Login</div>
+      {user ? <UserActions user = {user} /> : <LoginButton />}
     </header>
   );
 }

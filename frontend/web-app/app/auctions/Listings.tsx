@@ -3,12 +3,12 @@ import React, { useEffect, useState } from "react";
 import AuctionCard from "./AuctionCard";
 import AddPagination from "../components/AddPagination";
 import { Auction, PagedResult } from "../types";
-import { getData } from "./auctionActions";
+import { getData } from "../actions/auctionActions";
 import { useParamsStore } from "@/hooks/useParamsStore";
 import { useShallow } from "zustand/shallow";
 import qs from "query-string";
 import EmptyFilter from "../components/EmptyFilter";
-import Filters from "./FIlters";
+import Filters from "./Filters";
 import { ImSpinner } from "react-icons/im";
 
 export default function Listings() {

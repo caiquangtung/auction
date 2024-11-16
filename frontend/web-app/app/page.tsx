@@ -1,12 +1,11 @@
-import Listings from "./auctions/Listings";
+import React, { Suspense, lazy } from 'react';
 
+const Listings = lazy(() => import('./auctions/Listings'));
 
 export default function Home() {
   return (
-    <div>
-      <h3 className="text-3xl font-semibold">
+    <Suspense fallback={<div>Loading...</div>}>
       <Listings />
-      </h3>
-    </div>
-  )
+    </Suspense>
+  );
 }
