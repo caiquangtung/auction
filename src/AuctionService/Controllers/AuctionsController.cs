@@ -76,8 +76,7 @@ namespace AuctionService.Controllers
             auction.Item.Color = updateAuctionDto.Color ?? auction.Item.Color;
             auction.Item.Mileage = updateAuctionDto.Mileage ?? auction.Item.Mileage;
             auction.Item.Year = updateAuctionDto.Year ?? auction.Item.Year;
-            var auctionUpdated = _mapper.Map<AuctionUpdated>(auction);
-            await _publishEndpoint.Publish(auctionUpdated);
+            await _publishEndpoint.Publish(_mapper.Map<AuctionUpdated>(auction));
             // await _publishEndpoint.Publish(_mapper.Map<AuctionUpdated>(auction));
             var result = await _context.SaveChangesAsync() > 0;
 
@@ -97,19 +96,20 @@ namespace AuctionService.Controllers
         {
             var auction = await _context.Auctions.FindAsync(id);
             if (auction == null) return NotFound();
-            if(auction.Seller!= User.Identity.Name) return Forbid();
-            _context.Auctions.Remove(auction);
-            var result = await _context.SaveChangesAsync() ;
-            var auctionDeleted = new AuctionDeleted { Id = auction.Id.ToString() };
-            await _publishEndpoint.Publish(auctionDeleted);
-            if (result > 0)
-            {
-                return Ok();
-            }
-            return BadRequest("Problem deleting the auction.");
-  
+            if (auction.Seller != User.Identity.Name) return Forbid();
+            Console.WriteLine(auction.Id);
+            // Cách 1: Tạo instance của AuctionDeleted đúng cách
+            // await _publishEndpoint.Publish(new AuctionDeleted { Id = auction.Id.ToString() });
             
-        }
+            // Hoặc Cách 2: Nếu muốn giữ cú pháp anonymous object
+            await _publishEndpoint.Publish<AuctionDeleted>(new { Id = auction.Id.ToString() });
 
+            _context.Auctions.Remove(auction);
+            var result = await _context.SaveChangesAsync();
+
+            if (result > 0) return Ok();
+            
+            return BadRequest("Problem deleting the auction.");
+        }
     }
 }

@@ -20,6 +20,8 @@ export default function Listings() {
       searchTerm: state.searchTerm,
       orderBy: state.orderBy,
       filterBy: state.filterBy,
+      seller: state.seller,
+      winner: state.winner,
     }))
   );
   const setParams = useParamsStore((state) => state.setParams);
@@ -37,10 +39,11 @@ export default function Listings() {
 
   if (!data)
     return (
-      <div className="flex flex-col justify-center items-center h-screen">
-        {" "}
-        <ImSpinner className="animate-spin text-4xl text-gray-500 mb-2" />{" "}
-        <p className="text-sm text-gray-500">Loading...</p>{" "}
+      <div className="h-[calc(100vh-220px)] flex items-center justify-center">
+        <div className="flex flex-col justify-center items-center">
+          <ImSpinner className="animate-spin text-4xl text-gray-500 mb-2" />
+          <p className="text-sm text-gray-500">Loading...</p>
+        </div>
       </div>
     );
 
