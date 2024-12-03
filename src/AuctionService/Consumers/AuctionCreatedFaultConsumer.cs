@@ -1,4 +1,3 @@
-using System;
 using Contracts;
 using MassTransit;
 
@@ -8,17 +7,18 @@ public class AuctionCreatedFaultConsumer : IConsumer<Fault<AuctionCreated>>
 {
     public async Task Consume(ConsumeContext<Fault<AuctionCreated>> context)
     {
-        Console.WriteLine("--> Consuming faulty creation.");
-        var exception = context.Message.Exceptions.FirstOrDefault();
+        Console.WriteLine("--> Consuming faulty creation");
 
-        if (exception?.ExceptionType == typeof(ArgumentException).FullName)
+        var exception = context.Message.Exceptions.First();
+
+        if (exception.ExceptionType == "System.ArgumentException")
         {
-            context.Message.Message.Model = "Foo    Bar";
+            context.Message.Message.Model = "FooBar";
             await context.Publish(context.Message.Message);
         }
         else
         {
-            Console.WriteLine("Not an ArgumentException. Update error dashboard.");
+            Console.WriteLine("Not an argument exception - update error dashboard somewhere");
         }
     }
 }

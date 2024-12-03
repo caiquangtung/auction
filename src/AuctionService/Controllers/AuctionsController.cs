@@ -102,9 +102,9 @@ namespace AuctionService.Controllers
             // await _publishEndpoint.Publish(new AuctionDeleted { Id = auction.Id.ToString() });
             
             // Hoặc Cách 2: Nếu muốn giữ cú pháp anonymous object
-            await _publishEndpoint.Publish<AuctionDeleted>(new { Id = auction.Id.ToString() });
-
             _context.Auctions.Remove(auction);
+            await _publishEndpoint.Publish<AuctionDeleted>(new { Id = auction.Id.ToString() });
+            // await _publishEndpoint.Publish<AuctionDeleted>(new AuctionDto { Id = auction.Id });
             var result = await _context.SaveChangesAsync();
 
             if (result > 0) return Ok();
