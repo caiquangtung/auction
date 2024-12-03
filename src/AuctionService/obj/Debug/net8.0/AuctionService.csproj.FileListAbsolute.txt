@@ -115,3 +115,10 @@
 /Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/Google.Protobuf.dll
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/Grpc.AspNetCore.Server.dll
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/Grpc.AspNetCore.Server.ClientFactory.dll
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/Grpc.Core.Api.dll
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/Grpc.Net.Client.dll
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/Grpc.Net.ClientFactory.dll
+/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/bin/Debug/net8.0/Grpc.Net.Common.dll
