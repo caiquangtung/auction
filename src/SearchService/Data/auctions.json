@@ -144,24 +144,6 @@
         "imageUrl": "https://cdn.pixabay.com/photo/2012/11/02/13/02/car-63930_960_720.jpg"
     },
     {
-        "id": "3659ac24-29dd-407a-81f5-ecfe6f924b9b",
-        "reservePrice": 20000,
-        "seller": "bob",
-        "winner": null,
-        "soldAmount": 0,
-        "currentHighBid": 0,
-        "creatAt": "2024-10-13T11:06:18.90399Z",
-        "updateAt": "2024-10-13T11:06:18.90399Z",
-        "auctionEnd": "2024-11-30T11:06:18.90399Z",
-        "status": "Live",
-        "make": "Ford",
-        "model": "Model T",
-        "year": 1938,
-        "color": "Rust",
-        "mileage": 150150,
-        "imageUrl": "https://cdn.pixabay.com/photo/2017/08/02/19/47/vintage-2573090_960_720.jpg"
-    },
-    {
         "id": "155225c1-4448-4066-9886-6786536e05ea",
         "reservePrice": 50000,
         "seller": "tom",

@@ -182,23 +182,23 @@ public class DbInitializer
                 }
             },
             // 10 Ford Model T
-            new Auction
-            {
-                Id = Guid.Parse("3659ac24-29dd-407a-81f5-ecfe6f924b9b"),
-                Status = Status.Live,
-                ReservePrice = 20000,
-                Seller = "bob",
-                AuctionEnd = DateTime.UtcNow.AddDays(48),
-                Item = new Item
-                {
-                    Make = "Ford",
-                    Model = "Model T",
-                    Color = "Rust",
-                    Mileage = 150150,
-                    Year = 1938,
-                    ImageUrl = "https://cdn.pixabay.com/photo/2017/08/02/19/47/vintage-2573090_960_720.jpg"
-                }
-            }
+            // new Auction
+            // {
+            //     Id = Guid.Parse("3659ac24-29dd-407a-81f5-ecfe6f924b9b"),
+            //     Status = Status.Live,
+            //     ReservePrice = 20000,
+            //     Seller = "bob",
+            //     AuctionEnd = DateTime.UtcNow.AddDays(48),
+            //     Item = new Item
+            //     {
+            //         Make = "Ford",
+            //         Model = "Model T",
+            //         Color = "Rust",
+            //         Mileage = 150150,
+            //         Year = 1938,
+            //         ImageUrl = "https://cdn.pixabay.com/photo/2017/08/02/19/47/vintage-2573090_960_720.jpg"
+            //     }
+            // }
         };
         context.AddRange(auctions);
         context.SaveChanges();
