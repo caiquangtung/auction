@@ -5,10 +5,19 @@ import { DetailedSpecs } from "./DetailedSpecs";
 import { getCurrentUser } from "@/app/actions/authActions";
 import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
+import BidList from "../../BidList";
+import Image from 'next/image';
 
-export default async function Details({ params }: { params: { id: string } }) {
-  const data = await getDetailedViewData(params.id);
+type DetailsProps = {
+  params: { id: string };
+};
+
+export default async function Details({ params }: DetailsProps) {
+  // Chờ đợi params để lấy id
+  const { id } = await params;  // Chờ để có giá trị của params
+  const data = await getDetailedViewData(id);  // Sử dụng id đã được await
   const user = await getCurrentUser();
+
   return (
     <div>
       <div className="flex justify-between">
@@ -30,18 +39,18 @@ export default async function Details({ params }: { params: { id: string } }) {
       <div className="grid grid-cols-2 gap-6 mt-3">
         {/* Image Section */}
         <div className="w-full bg-gray-200 rounded-lg overflow-hidden">
-          <img
+          <Image
             src={data.imageUrl}
             alt="Car Image"
+            priority={true}
+            width={800}  
+            height={500} 
             className="w-full h-full object-cover"
           />
         </div>
 
         {/* Bids Section */}
-        <div className="w-full bg-gray-200 rounded-lg p-4">
-          <h3 className="text-xl font-semibold">Bids</h3>
-          {/* Add bidding functionality here later */}
-        </div>
+        <BidList user={user} auction={data} />
       </div>
 
       <div className="mt-6">

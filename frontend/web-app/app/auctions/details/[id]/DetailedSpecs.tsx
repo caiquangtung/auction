@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import { Auction } from "@/app/types";
 import { Table } from "flowbite-react";
 type Props = {
-    auction: Auction
-}
+  auction: Auction;
+};
 export function DetailedSpecs({ auction }: Props) {
   return (
     <Table striped={true}>
@@ -27,6 +27,10 @@ export function DetailedSpecs({ auction }: Props) {
         <Table.Row>
           <Table.Cell>Mileage</Table.Cell>
           <Table.Cell>{auction.mileage} km</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>Has reserve price?</Table.Cell>
+          <Table.Cell>{auction.reservePrice > 0 ? "Yes" : "No"}</Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table>

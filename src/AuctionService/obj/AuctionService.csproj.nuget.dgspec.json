@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/AuctionService.csproj": {}
+    "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/AuctionWEB/src/AuctionService/AuctionService.csproj": {}
   },
   "projects": {
-    "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/AuctionService.csproj": {
+    "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/AuctionWEB/src/AuctionService/AuctionService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/AuctionService.csproj",
+        "projectUniqueName": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/AuctionWEB/src/AuctionService/AuctionService.csproj",
         "projectName": "AuctionService",
-        "projectPath": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/AuctionService.csproj",
+        "projectPath": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/AuctionWEB/src/AuctionService/AuctionService.csproj",
         "packagesPath": "/Users/tungcaiquang/.nuget/packages/",
-        "outputPath": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/AuctionService/obj/",
+        "outputPath": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/AuctionWEB/src/AuctionService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tungcaiquang/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/Contracts/Contracts.csproj": {
-                "projectPath": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/Contracts/Contracts.csproj"
+              "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/AuctionWEB/src/Contracts/Contracts.csproj": {
+                "projectPath": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/AuctionWEB/src/Contracts/Contracts.csproj"
               }
             }
           }
@@ -101,14 +101,14 @@
         }
       }
     },
-    "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/Contracts/Contracts.csproj": {
+    "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/AuctionWEB/src/Contracts/Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/Contracts/Contracts.csproj",
+        "projectUniqueName": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/AuctionWEB/src/Contracts/Contracts.csproj",
         "projectName": "Contracts",
-        "projectPath": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/Contracts/Contracts.csproj",
+        "projectPath": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/AuctionWEB/src/Contracts/Contracts.csproj",
         "packagesPath": "/Users/tungcaiquang/.nuget/packages/",
-        "outputPath": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/Carsties/src/Contracts/obj/",
+        "outputPath": "/Users/tungcaiquang/Documents/CODE/NextJS_.Net_PRJ/AuctionWEB/src/Contracts/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tungcaiquang/.nuget/NuGet/NuGet.Config"

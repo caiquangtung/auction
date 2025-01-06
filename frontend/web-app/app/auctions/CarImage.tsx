@@ -1,6 +1,5 @@
-'use client';
-import React, { useState } from 'react';
 import Image from 'next/image';
+import { useState } from 'react';
 
 type CarImageProps = {
   imageURL: string;
@@ -20,6 +19,8 @@ const CarImage: React.FC<CarImageProps> = ({ imageURL }) => {
       `}      
       onLoad={() => setLoading(false)}
       fill
+      priority 
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"  
     />
   );
 };

@@ -21,17 +21,17 @@ public class DbInitializer
             .CreateAsync();
     
         var count = await DB.CountAsync<Item>();
-        // if (count == 0)
-        // {
-        //     Console.WriteLine("No data - will attempt to seed");
-        //     var itemdata = await File.ReadAllTextAsync("Data/auctions.json");
+        if (count == 0)
+        {
+            Console.WriteLine("No data - will attempt to seed");
+            var itemdata = await File.ReadAllTextAsync("Data/auctions.json");
 
-        //     var options = new JsonSerializerOptions{PropertyNameCaseInsensitive =  true};
+            var options = new JsonSerializerOptions{PropertyNameCaseInsensitive =  true};
 
-        //     var items = JsonSerializer.Deserialize<List<Item>>(itemdata, options);
+            var itemsDb = JsonSerializer.Deserialize<List<Item>>(itemdata, options);
 
-        //     await DB.SaveAsync(items);
-        // } 
+            await DB.SaveAsync(itemsDb);
+        } 
         var scope = app.Services.CreateAsyncScope();
         var httpClient = scope.ServiceProvider.GetRequiredService<AuctionSvcHttpClient>();
         var items = await httpClient.GetItemForSearchDb();
