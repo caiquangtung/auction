@@ -67,9 +67,12 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
       - ASPNETCORE_URLS=http://+:80
-      - ClientApp=http://localhost:3000
-      - IssuerUri=http://localhost:5001
+      # - ClientApp=http://localhost:3000
+      # - IssuerUri=http://localhost:5001
+      - ClientApp=https://app.carst.local
+      - IssuerUri=https://id.carst.local
       - ConnectionStrings__DefaultConnection=Server=postgres;Port=5432;User Id=postgres;Password=tungdira@;Database=identity
+      - VIRTUAL_HOST=id.carst.local 
     ports:
       - 5001:80
     depends_on:
@@ -82,8 +85,10 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
       - ASPNETCORE_URLS=http://+:80
-    ports:
-      - 6001:80
+      - ClientApp=https://app.carst.local
+      - VIRTUAL_HOST=api.carst.local      
+    # ports:
+    #   - 6001:80
   bid-svc:
     image: trycatchlearn/bid-svc:latest
     build: 
@@ -125,12 +130,14 @@ services:
       - 3000:3000
     environment:
       - AUTH_SECRET="CINjME5vsIU2CXAD1pl+MPVndO8VydNLLJpprgRqyhg="
-      - AUTH_URL=http://localhost:3000
+      - AUTH_URL=https://app.carst.local
       - AUTH_URL_INTERNAL=http://web-app:3000
       - API_URL=http://gateway-svc/
-      - ID_URL=http://localhost:5001
+      - ID_URL=https://id.carst.local
       - ID_URL_INTERNAL=http://identity-svc
-      - NOTIFY_URL=http://localhost:6001/notifications
+      - NOTIFY_URL=https://api.carst.local/notifications
+      - VIRTUAL_HOST=app.carst.local
+      - VIRTUAL_PORT=3000
   nginx-proxy:
     image: nginxproxy/nginx-proxy
     container_name: nginx-proxy
