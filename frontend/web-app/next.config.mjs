@@ -1,6 +1,5 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   logging: {
     fetches: {
       fullUrl: true,
@@ -22,6 +21,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  output: 'standalone',
 };
 
 export default nextConfig;

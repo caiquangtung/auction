@@ -4,12 +4,13 @@ import AuctionCard from "./AuctionCard";
 import AddPagination from "../components/AddPagination";
 import { getData } from "../actions/auctionActions";
 import { useParamsStore } from "@/hooks/useParamsStore";
-import { useShallow } from "zustand/shallow";
+import { shallow } from "zustand/shallow";
 import qs from "query-string";
 import Filters from "./Filters";
 import { ImSpinner } from "react-icons/im";
 import { useAuctionStore } from "@/hooks/useAuctionStore";
 import EmptyFilter from "../components/EmptyFilter";
+import { useShallow } from "zustand/react/shallow";
 
 
 export default function Listings() {

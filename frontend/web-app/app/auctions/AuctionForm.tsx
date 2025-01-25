@@ -13,6 +13,12 @@ import { Auction } from "../types";
 type Props = {
   auction?: Auction;
 };
+
+type CustomError = {
+  status: number;
+  message: string;
+};
+
 export default function AuctionForm({ auction }: Props) {
   const router = useRouter();
   const pathname = usePathname();
@@ -25,16 +31,18 @@ export default function AuctionForm({ auction }: Props) {
   } = useForm({
     mode: "onTouched",
   });
+
   useEffect(() => {
     if (auction) {
-      const {make, model, color, mileage, year} = auction
-      reset({ make, model, color, mileage, year })
+      const { make, model, color, mileage, year } = auction;
+      reset({ make, model, color, mileage, year });
     }
     setFocus("make");
-  }, [setFocus]);
+  }, [auction, reset, setFocus]);
+
   async function onSubmit(data: FieldValues) {
     try {
-      let id = " ";
+      let id = "";
       let res;
       if (pathname === "/auctions/create") {
         res = await createAuction(data);
@@ -47,12 +55,15 @@ export default function AuctionForm({ auction }: Props) {
         throw res.error;
       }
       router.push(`/auctions/details/${id}`);
-    } catch (error: any) {
-      console.log(error);
-      toast.error(`${error.status} - ${error.message}`);
+    } catch (error) {
+      const customError = error as CustomError;
+      console.log(customError);
+      toast.error(`${customError.status} - ${customError.message}`);
     }
   }
-
+  function handleCancel() {
+    router.back();
+  }
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="p-4 space-y-4">
       {/* Make */}
@@ -134,7 +145,7 @@ export default function AuctionForm({ auction }: Props) {
               label="Auction End Date"
               name="auctionEnd"
               control={control}
-              type="date" // Placeholder until custom date picker is added
+              type="date"
               rules={{ required: "Auction end date is required" }}
             />
           </div>
@@ -143,7 +154,7 @@ export default function AuctionForm({ auction }: Props) {
 
       {/* Submit Button */}
       <div className="flex justify-between">
-        <Button type="button" className="bg-gray-300 hover:bg-red-500">
+        <Button type="button" className="bg-gray-300 hover:bg-red-500" onClick={handleCancel}>
           Cancel
         </Button>
         <Button

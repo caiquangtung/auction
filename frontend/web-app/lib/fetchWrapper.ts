@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
 
-const BASE_URL = "http://localhost:6001/";
+const BASE_URL = process.env.API_URL;
 
 async function get(url: string) {
   const requestOptions = {
@@ -44,10 +44,15 @@ async function del(url: string) {
   return handleResponse(response);
 }
 
-async function getHeaders() {
+type Headers = {
+  "Content-Type": string;
+  Authorization?: string;
+};
+
+async function getHeaders(): Promise<Headers> {
   const session = await auth();
 
-  const headers: any = {
+  const headers: Headers = {
     "Content-Type": "application/json",
   };
 
@@ -63,7 +68,7 @@ async function handleResponse(response: Response) {
   let data;
   try {
     data = JSON.parse(text);
-  } catch (error) {
+  } catch {
     data = text;
   }
   if (response.ok) {

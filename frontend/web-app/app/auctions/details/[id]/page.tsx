@@ -6,16 +6,10 @@ import { getCurrentUser } from "@/app/actions/authActions";
 import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
 import BidList from "../../BidList";
-import Image from 'next/image';
+import Image from "next/image";
 
-type DetailsProps = {
-  params: { id: string };
-};
-
-export default async function Details({ params }: DetailsProps) {
-  // Chờ đợi params để lấy id
-  const { id } = await params;  // Chờ để có giá trị của params
-  const data = await getDetailedViewData(id);  // Sử dụng id đã được await
+export default async function Details({ params }: { params: { id: string } }) {
+  const data = await getDetailedViewData(params.id);
   const user = await getCurrentUser();
 
   return (
